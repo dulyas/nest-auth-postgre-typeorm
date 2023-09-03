@@ -89,6 +89,7 @@ export class AuthService {
 
   async logout(refreshToken: string): Promise<{ message: string }> {
     await this.tokenService.removeRefresh(refreshToken);
+
     return {
       message: "Logged out successfully",
     };

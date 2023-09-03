@@ -19,8 +19,10 @@ export class UserEntity {
 export class IUser {
   @ApiProperty()
   name: string;
+
   @ApiProperty()
   password: string;
+
   refreshToken: string;
 }
 
