@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { ApiProperty } from "@nestjs/swagger";
 
 @Entity()
 export class UserEntity {
@@ -15,35 +16,41 @@ export class UserEntity {
   refreshToken: string;
 }
 
-export type IUser = {
+export class IUser {
+  @ApiProperty()
   name: string;
+  @ApiProperty()
   password: string;
   refreshToken: string;
-};
+}
 
-export type IUserResponse = {
+export class IUserResponse {
   name: string;
-};
+}
 
-export type IUserRequest = {
+export class IUserRequest {
+  @ApiProperty()
   name: string;
+
+  @ApiProperty()
   password: string;
-};
+}
 
-export type IUserDtoWithRefreshToken = {
+export class IUserDtoWithRefreshToken {
   refreshToken: string;
   name: string;
-};
+}
 
-export type ITokens = {
+export class ITokens {
   refreshToken: string;
   accessToken: string;
-};
+}
 
-export type IUserDtoWithTokens = {
+export class IUserDtoWithTokens extends IUserDtoWithRefreshToken {
   accessToken: string;
-} & IUserDtoWithRefreshToken;
+}
 
-export type IUserBody = {
+export class IUserBody extends IUser {
+  @ApiProperty()
   keepLogin: boolean;
-} & IUser;
+}
