@@ -64,7 +64,7 @@ export class AuthController {
     @Res({ passthrough: true }) response: Response,
   ) {
     try {
-      const refreshToken = cookies;
+      const { refreshToken } = cookies;
       const userData = await this.authService.refresh(refreshToken);
       response.cookie("refreshToken", userData.refreshToken, {
         maxAge: 30 * 24 * 60 * 60 * 1000,
