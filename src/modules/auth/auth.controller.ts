@@ -6,7 +6,7 @@ import {
   IUserDtoWithTokens,
   IUserBody,
   IUserRequest,
-} from "./entities/user.entity";
+} from "./interfaces/user.interfaces";
 
 @Controller("auth")
 export class AuthController {

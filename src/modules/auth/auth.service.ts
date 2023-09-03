@@ -7,14 +7,14 @@ import {
   UnauthorizedException,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
+import { UserEntity } from "./entities/user.entity";
+import { Repository } from "typeorm";
 import {
-  UserEntity,
   ITokens,
   IUserRequest,
   IUserDtoWithRefreshToken,
   IUserDtoWithTokens,
-} from "./entities/user.entity";
-import { Repository } from "typeorm";
+} from "./interfaces/user.interfaces";
 
 @Injectable()
 export class AuthService {

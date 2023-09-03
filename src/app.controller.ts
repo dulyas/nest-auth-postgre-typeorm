@@ -1,6 +1,6 @@
 import { Controller, UseGuards, Get, Request } from "@nestjs/common";
 import { AuthGuard } from "./modules/auth/auth.guard";
-import { IUserResponse } from "./modules/auth/entities/user.entity";
+import { IUserResponse } from "./modules/auth/interfaces/user.interfaces";
 import { Request as RequestClass } from "express";
 import { ApiBearerAuth } from "@nestjs/swagger";
 
